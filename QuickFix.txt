@@ -84,3 +84,5 @@ NANO AS DEFAULT
 export VISUAL=nano
 export EDITOR=nano
 
+SET GIT TO USE NANO
+git config --global core.editor "nano"
