@@ -34,3 +34,13 @@ and then remaking the kernel:
 ```bash
 sudo mkinitcpio -P linux
 ```
+
+## Install prime run
+```bash
+sudo pacman -S nvidia-prime
+```
+
+Run the game with
+```bash
+prime-run <program-to-run>
+```
