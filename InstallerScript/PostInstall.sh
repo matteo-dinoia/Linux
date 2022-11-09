@@ -6,6 +6,7 @@ sudo systemctl enable sddm
 #LANGUAGE
 echo "language fix (maybe)"
 printf "en_US.UTF-8 UTF-8\n#it_IT.UTF-8 UTF-8\n" | sudo tee /etc/locale.gen
+printf "[Formats]\nLANG=en_US.UTF-8\n\n[Translations]\nLANGUAGE=en_US" > ~/.config/plasma-localerc 
 sudo locale-gen
 
 echo "change sddm and x11 keymap"
