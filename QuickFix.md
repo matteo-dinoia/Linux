@@ -1,49 +1,49 @@
-REMEMBER TO DO
+### REMEMBER TO DO
 reflector
 swapon
 
-WRONG LAYOUT SDDM
+### WRONG LAYOUT SDDM
 localectl set-x11-keymap --no-convert "it"
 localectl set-keymap it
 
-SCREENSHOT
+### SCREENSHOT
 spectacle -brenc
 clipboard->config->general->non-text-selection->"Only when explecetly copied"
 
-ONLY OPENDESKTOP (ACCOUNT)
+### ONLY OPENDESKTOP (ACCOUNT)
 pacman -S kaccounts-providers
 
 
-ONLY YT IN GOOGLEACCOUNT (for Google Drive)
+### ONLY YT IN GOOGLEACCOUNT (for Google Drive)
 pacman -S kio-gdrive
 
-MAN
+### MAN
 pacman -S man-db man-pages
 
-GREETING FISH
+### GREETING FISH
 function fish_greeting
 end
 
-NO SDDM THEMING
+### NO SDDM THEMING
 pacman -S sddm-kcm
 SCREENSHOT
 spectacle -rbnc
 ->tolgo "ignore image"
 
 
-NO PDF PREVIEW
+### NO PDF PREVIEW
 pacman -S kdegraphics-thumbnailers
 
-YAKUAKE NOT OPENING FIRST TIME
+### YAKUAKE NOT OPENING FIRST TIME
 create costum shorcut
 
 
-FIREFOX SLOW
+### FIREFOX SLOW
 change dns (in ipv4 del wifi)
 a     8.8.8.8, 8.8.4.4
 
 
-TABLET NOT WORKING PROPERLY
+### TABLET NOT WORKING PROPERLY
 pacman -S xf86-input-wacom
 pacman -S usbutils (temporaneo)
 lsusb  (e certo tavoletta e codice <4 exa:4 exa>)
@@ -60,10 +60,10 @@ pacman -Runsc usbutils
 reboot
 
 
-SLOW PC
+### SLOW PC
 https://www.linkedin.com/pulse/how-make-your-archlinux-faster-sourav-goswami
 
-SETTING UP SYSTEMD-BOOT
+### SETTING UP SYSTEMD-BOOT
 https://www.addictivetips.com/ubuntu-linux-tips/set-up-systemd-boot-on-arch-linux/
 file /boot/loader/entries/arch.conf
     title Arch Linux
@@ -76,13 +76,17 @@ file /boot/loader/loader.conf
     console-mode auto
     editor no
 
-NANO NO COLOR
+### NANO NO COLOR
 Nano ships with predefined syntax highlighting rules, defined in /usr/share/nano/*.nanorc. To enable them, add the following line to your ~/.config/nano/nanorc or to /etc/nanorc:
 include "/usr/share/nano/*.nanorc"
 
-NANO AS DEFAULT
+### NANO AS DEFAULT
 export VISUAL=nano
 export EDITOR=nano
 
-SET GIT TO USE NANO
+### SET GIT TO USE NANO
 git config --global core.editor "nano"
+
+### ADDING PARALLEL DOWNLOAD ON PACMAN/YAY
+sudo nano /etc/pacman.conf
+uncommnet: ParallelDownloads = 5
