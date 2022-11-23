@@ -90,3 +90,6 @@ git config --global core.editor "nano"
 ### ADDING PARALLEL DOWNLOAD ON PACMAN/YAY
 sudo nano /etc/pacman.conf
 uncommnet: ParallelDownloads = 5
+
+### TOO MUCH OPTION IN TOUCHPAD (NOT EVEN WORKING)
+remove package synaptics
