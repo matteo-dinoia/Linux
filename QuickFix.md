@@ -1,24 +1,32 @@
 ### REMEMBER TO DO
-reflector
-swapon
+reflector how
+
 
 ### WRONG LAYOUT SDDM
+```sh
 localectl set-x11-keymap --no-convert "it"
 localectl set-keymap it
+```
+
 
 ### SCREENSHOT
-spectacle -brenc
-clipboard->config->general->non-text-selection->"Only when explecetly copied"
+* Use command in the costum shortcut: ``` spectacle -brenc ```
+* clipboard->config->general->non-text-selection->"Only when explecetly copied"
 
 ### ONLY OPENDESKTOP (ACCOUNT)
+```sh
 pacman -S kaccounts-providers
-
+```
 
 ### ONLY YT IN GOOGLEACCOUNT (for Google Drive)
+```sh
 pacman -S kio-gdrive
+```
 
 ### MAN
+```sh
 pacman -S man-db man-pages
+```
 
 ### GREETING FISH
 function fish_greeting
