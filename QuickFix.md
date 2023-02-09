@@ -101,3 +101,15 @@ uncommnet: ParallelDownloads = 5
 
 ### TOO MUCH OPTION IN TOUCHPAD (NOT EVEN WORKING)
 remove package synaptics
+
+### INSTALLING PIPEWIRE INSTEAD OF PULSE
+```sh
+paru -S plasma-pa pipewire pipewire-pulse lib32-pipewire kpipewire wireplumber
+systemctl --user start pipewire-pulse.service
+systemctl --user enable pipewire-pulse.service
+```
+
+### Fix no OSD (On-Screen Display) on KDE
+* System Settings > Workspace Behavior > General Behavior
+* Check: Display visual feedback for status change
+
