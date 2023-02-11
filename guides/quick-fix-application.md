@@ -1,4 +1,4 @@
-#Quick Fix Application
+# Quick Fix Application
 ## Random Application
 ### MAN
 ```sh
@@ -16,10 +16,14 @@ pacman -S kdegraphics-thumbnailers
 create costum shorcut
 ### INSTALLING PIPEWIRE INSTEAD OF PULSE
 ```sh
-paru -S plasma-pa pipewire pipewire-pulse lib32-pipewire kpipewire wireplumber
+pacman -S plasma-pa pipewire pipewire-pulse lib32-pipewire kpipewire wireplumber
 systemctl --user start pipewire-pulse.service
 systemctl --user enable pipewire-pulse.service
 ```
+### INSTALLING OSU LAZER (ONLY WORK TABLET ON WAYLAND WITHOUT OPEN TABLET DRIVER)
+* Install osu (via a AUR manager for example)
+* Use mouse to disable raw input so I can use touchpad and graphical tablet
+* Use configurator for Xorg in Kde for configure area
 
 ## Nano Setup
 ### NANO NO COLOR
