@@ -2,7 +2,7 @@
 ## Media
 ### REMOVING METADATA
 ```sh
-mat2 *
+mat2 * --inplace
 ```
 ### ROTATING ALL IMAGES
 ```sh
@@ -17,7 +17,7 @@ jpegoptim *
 ### Batch Renaming
 ```sh
 i=1
-for fi in IMG_*.jpg; do
+for fi in *.jpg; do
     mv "$fi" "$(printf "book-v1-p%03d.jpg" "$i")"
     i=$((i+1))
 done
