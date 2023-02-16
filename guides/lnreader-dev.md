@@ -13,7 +13,7 @@ nvm use 16.13.1
 
 
 ### Java installation
-download and install java 11
+download and install java 11 as indicated in [React Native Enviroment Setup](https://reactnative.dev/docs/environment-setup)
 
 set `JAVA_HOME` to the install directory of java11
 
