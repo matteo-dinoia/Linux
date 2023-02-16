@@ -33,6 +33,8 @@ cd lnreader
 ```
 
 ### Installing lnreader and running it
+```bash
 npm install --legacy-peer-deps
-npm start
-npm run android (on a new console, it will take a while)
+npm start&
+npm run android
+```
