@@ -15,15 +15,15 @@ nvm use 15
 ### Java installation
 download and install java 11
 
-set JAVA_HOME to the install directory of java11
+set ```JAVA_HOME``` to the install directory of java11
 
 
 ### Installing cmdline-tools android
 downloading cmdline-tools at [link](https://developer.android.com/studio/)
 
-extract them in <android_location>/sdk/cmdline-tools/latest
+extract them in ```<android_location>/sdk/cmdline-tools/latest```
 
-exporting ANDROID_SDK_ROOT to <android_location>/sdk
+exporting ```ANDROID_SDK_ROOT``` to ```<android_location>/sdk```
 
 
 ### Accepting licenses (needed for npm run android)
