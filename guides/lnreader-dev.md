@@ -7,8 +7,8 @@ install nvm by the [github page](https://github.com/nvm-sh/nvm)
 restart bash
 
 ```bash
-nvm install 15
-nvm use 15
+nvm install 16.13.1
+nvm use 16.13.1
 ```
 
 
