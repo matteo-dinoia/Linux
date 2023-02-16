@@ -4,8 +4,11 @@
 ### Installing NPM
 install nvm by the [https://github.com/nvm-sh/nvm](github page)
 restart bash
-install npm 15 (by using nvm)
+```bash
+nvm install 15
 nvm use 15
+```
+
 
 ### Java installation
 download and install java 11
@@ -17,13 +20,17 @@ extract them in <android_location>/sdk/cmdline-tools/latest
 exporting ANDROID_SDK_ROOT to <android_location>/sdk
 
 ### Accepting licenses (needed for npm run android)
+```bash
 yes | <android_location>/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+```
 
 ## Installing and running application
 ### Fork and clone
 fork repository
+```bash
 git clone https://github.com/<your-account-name>/lnreader.git
 cd lnreader
+```
 
 ### Installing lnreader and running it
 npm install --legacy-peer-deps
