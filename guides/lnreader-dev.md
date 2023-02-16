@@ -2,7 +2,7 @@
 
 ## Installing requirement
 ### Installing NPM
-install nvm by the [https://github.com/nvm-sh/nvm](github page)
+install nvm by the [github page](https://github.com/nvm-sh/nvm)
 
 restart bash
 
@@ -19,7 +19,7 @@ set JAVA_HOME to the install directory of java11
 
 
 ### Installing cmdline-tools android
-downloading cmdline-tools at [https://developer.android.com/studio/](link)
+downloading cmdline-tools at [link](https://developer.android.com/studio/)
 
 extract them in <android_location>/sdk/cmdline-tools/latest
 
