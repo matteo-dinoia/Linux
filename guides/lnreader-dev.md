@@ -3,6 +3,10 @@
 ## Installing requirement
 ### Installing NPM
 install nvm by the [github page](https://github.com/nvm-sh/nvm)
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/<version>/install.sh | bash
+```
+
 
 restart bash
 
