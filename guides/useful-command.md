@@ -23,3 +23,8 @@ for fi in *.jpg; do
 done
 ```
 
+### Image downloading and resizing
+```sh
+curl "link" --output "name";
+convert -resize <size> "name" "name";
+```
