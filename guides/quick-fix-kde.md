@@ -2,6 +2,10 @@
 ## To add
 reflector how
 
+## Random app
+### THUMBNAILERS IN DOLPHIN
+kdegraphics-thumbnailers -> for pdf thumbnails
+
 
 ## Sddm
 ### WRONG LAYOUT SDDM
