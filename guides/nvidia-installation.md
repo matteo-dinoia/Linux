@@ -34,8 +34,16 @@ and then remaking the kernel:
 ```bash
 sudo mkinitcpio -P linux
 ```
+Add the kernel parameter nvidia-drm.modeset=1 to /etc/default/grub (or /boot/loader/entries/arch.conf) and run the command sudo update-grub
 
-## Install prime run
+May be usefull to ensure some package are installed:
+```sh
+sudo pacman -Syu --needed xorg-xwayland libxcb egl-wayland
+``
+
+**IMPORTANT NOTE:** use ibt=off in kernel parameter in grub for avoid not booting (problem with intel)
+
+## Using only on application (Prime-Run)
 ```bash
 sudo pacman -S nvidia-prime
 ```
