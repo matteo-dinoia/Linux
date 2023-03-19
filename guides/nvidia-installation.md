@@ -5,7 +5,7 @@ Install nvidia driver **(for nvivida Maxwell and up (>=Geforce 700))**:
 sudo pacman -S nvidia
 ```
 add pacman hook to compile module on kernel upgrades creating file `/etc/pacman.d/hooks/nvidia.hook` with:
-```bash
+```text
 [Trigger]
 Operation=Install
 Operation=Upgrade
@@ -23,15 +23,15 @@ NeedsTargets
 Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'
 ```
 blacklist nouveau driver
-```bash
+```sh
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 ```
 Load nvidia modules on boot modifying file /etc/mkinitcpio.conf as:
-```bash
+```sh
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 ```
 and then remaking the kernel:
-```bash
+```sh
 sudo mkinitcpio -P linux
 ```
 Add the kernel parameter nvidia-drm.modeset=1 to /etc/default/grub (or /boot/loader/entries/arch.conf) and run the command sudo update-grub
@@ -39,9 +39,9 @@ Add the kernel parameter nvidia-drm.modeset=1 to /etc/default/grub (or /boot/loa
 May be usefull to ensure some package are installed:
 ```sh
 sudo pacman -Syu --needed xorg-xwayland libxcb egl-wayland
-``
+```
 
-**IMPORTANT NOTE:** use ibt=off in kernel parameter in grub for avoid not booting (problem with intel)
+**IMPORTANT NOTE**: use ibt=off in kernel parameter in grub for avoid not booting (problem with intel)
 
 ## Using only on application (Prime-Run)
 ```bash
