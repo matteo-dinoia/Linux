@@ -25,6 +25,11 @@ systemctl --user enable pipewire-pulse.service
 * Use mouse to disable raw input so I can use touchpad and graphical tablet
 * Use configurator for Xorg in Kde for configure area
 
+### MINECRAFT FAILING TO LAUNCH
+```sh
+pacman -S xorg-xandr
+```
+
 ## Nano Setup
 ### NANO NO COLOR
 Nano ships with predefined syntax highlighting rules, defined in /usr/share/nano/*.nanorc. To enable them, add the following line to your ~/.config/nano/nanorc or to /etc/nanorc:
