@@ -111,7 +111,7 @@ printf "Cmd:\t chrooting into new install\n"
     arch-chroot /mnt
 
 printf "Cmd:\t setting regional to Rome and syncing local clock\n"
-    ln -sf /usr/share/zoneinfo/Europe/Rome
+    ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
     hwclock --systohc
 
 printf "Cmd:\t setting US language and IT keyboard\n"
