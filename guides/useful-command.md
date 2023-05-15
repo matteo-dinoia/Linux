@@ -28,3 +28,6 @@ done
 curl "link" --output "name";
 convert -resize <size> "name" "name";
 ```
+
+### Splitting pdf (2x2) -> need mupdf-tools
+mutool poster -x 2 -y 2 input.pdf output.pdf
