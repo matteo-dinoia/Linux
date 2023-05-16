@@ -32,8 +32,12 @@ pacman -S kaccounts-providers kio-gdrive
 ```
 ### TOO MUCH OPTION IN TOUCHPAD (NOT EVEN WORKING)
 remove package synaptics
-
-
+### SHUTTING DOWN SHORTCUT
+qdbus org.kde.ksmserver /KSMServer logout 1 2 0
+### SHUTTING DOWN TAKES AGES
+install sddm-git instead og sddm
+### LOCALE FIX
+Install all needed locals (often missing italian)
 
 
 

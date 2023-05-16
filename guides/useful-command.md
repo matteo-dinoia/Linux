@@ -10,11 +10,11 @@ for photo in *.jpg ;do
     convert $photo -rotate 90 $photo;
 done
 ```
-### Compressing photo
+### COMPRESSING PHOTO
 ```sh
 jpegoptim *
 ```
-### Batch Renaming
+### BATCH RENAMING
 ```sh
 i=1
 for fi in *.jpg; do
@@ -23,11 +23,13 @@ for fi in *.jpg; do
 done
 ```
 
-### Image downloading and resizing
+### IMAGE DOWNLOAD AND RESIZING
 ```sh
 curl "link" --output "name";
 convert -resize <size> "name" "name";
 ```
 
-### Splitting pdf (2x2) -> need mupdf-tools
+### SPLITTING PDF (2x2) -> need mupdf-tools
 mutool poster -x 2 -y 2 input.pdf output.pdf
+#### Alternative
+convert -quality 100 -density 300 a.pdf +repage -crop 2x2@  +repage b.pdf

@@ -29,6 +29,8 @@ systemctl --user enable pipewire-pulse.service
 ```sh
 pacman -S xorg-xandr
 ```
+### FIREFOX NO PINCH TO ZOOM
+MOZ_ENABLE_WAYLAND=1 firefox
 
 ## Nano Setup
 ### NANO NO COLOR
