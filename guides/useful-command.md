@@ -14,6 +14,8 @@ done
 ```sh
 jpegoptim *
 ```
+### COMPRESSING PDF -> need ghostscript
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -dColorImageResolution=150 -sOutputFile=output.pdf 17_grafi_albero_minimo_ricoprente.pdf
 ### BATCH RENAMING
 ```sh
 i=1
