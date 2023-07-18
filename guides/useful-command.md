@@ -1,4 +1,11 @@
 # Useful Commands
+
+## Speed up
+### Blaming startup times
+systemd-analyze blame
+Other command at: [tecmint](https://www.tecmint.com/systemd-analyze-monitor-linux-bootup-performance)
+
+
 ## Media
 ### REMOVING METADATA
 ```sh
