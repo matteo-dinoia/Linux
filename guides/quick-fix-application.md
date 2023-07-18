@@ -60,6 +60,20 @@ pacman -Runsc usbutils
 reboot
 
 ## Speed Up
+## Reducing problem with out of memory (kill first process not best)
+sudo sysctl -w vm.oom_kill_allocating_task=1
+
+## Reserve memory before dying
+sudo sysctl -w vm.admin_reserve_kbytes=256000000
+
+
+### DISABLING MODULE FOR WEBCAM
+Cameras are controlled by the uvcvideo kernel module.
+
+You can disable the camera until reboot by opening a terminal and typing sudo modprobe -r uvcvideo. You will be asked for your password, and after typing it, if there are no errors shown in the terminal, your webcam should be disabled.
+
+If you got the error message: modprobe: FATAL: Module uvcvideo is in use. after trying to remove the uvcvideo module, you can try to force its removal with the following: sudo rmmod -f uvcvideo (thanks thiagowfx)
+
 ### ADDING PARALLEL DOWNLOAD ON PACMAN/YAY
 sudo nano /etc/pacman.conf
 uncommnet: ParallelDownloads = 5
