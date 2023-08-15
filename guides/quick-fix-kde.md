@@ -15,9 +15,6 @@ localectl set-keymap it
 ```
 ### NO SDDM THEMING
 pacman -S sddm-kcm
-SCREENSHOT
-spectacle -rbnc
-->tolgo "ignore image"
 
 ## Settings
 ### NO OSD (ON-SCREEN DISPLAY)
