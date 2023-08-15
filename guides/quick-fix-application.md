@@ -7,9 +7,6 @@ pacman -S man-db man-pages
 ### SCREENSHOT
 * Use command in the costum shortcut: ``` spectacle -brenc ```
 * clipboard->config->general->non-text-selection->"Only when explecetly copied"
-### GREETING FISH
-function fish_greeting
-end
 ### NO PDF PREVIEW
 pacman -S kdegraphics-thumbnailers
 ### YAKUAKE NOT OPENING FIRST TIME
@@ -27,7 +24,7 @@ systemctl --user enable pipewire-pulse.service
 
 ### MINECRAFT FAILING TO LAUNCH
 ```sh
-pacman -S xorg-xandr
+pacman -S xorg-xrandr
 ```
 ### FIREFOX NO PINCH TO ZOOM
 MOZ_ENABLE_WAYLAND=1 firefox
