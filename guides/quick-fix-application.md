@@ -29,6 +29,24 @@ pacman -S xorg-xrandr
 ### FIREFOX NO PINCH TO ZOOM
 MOZ_ENABLE_WAYLAND=1 firefox
 
+### MISSING HIDDEN IN MENU EDITOR
+They must be enabled in the settings
+
+### NO TITLEBAR FIREFOX
+customize -> [] title bar
+
+### NOT CONNECTING BLUETOOTH
+sudo pacman -S pulsaudio-bluetooth
+
+### Mouse and autocomp in nanot (best use old file)
+add to /etc/nanorc
+include "/usr/share/nano/*.nanorc"
+set mouse
+
+### NO JP
+sudo pacman -S adobe-source-han-sans-jp-fonts
+
+
 ## Nano Setup
 ### NANO NO COLOR
 Nano ships with predefined syntax highlighting rules, defined in /usr/share/nano/*.nanorc. To enable them, add the following line to your ~/.config/nano/nanorc or to /etc/nanorc:
