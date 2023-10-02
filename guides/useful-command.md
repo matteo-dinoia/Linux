@@ -11,7 +11,7 @@ Other command at: [tecmint](https://www.tecmint.com/systemd-analyze-monitor-linu
 ```sh
 mat2 * --inplace
 ```
-### ROTATING ALL IMAGES
+### ROTATING ALL IMAGES -> need imagemagick
 ```sh
 for photo in *.jpg ;do
     convert $photo -rotate 90 $photo;
