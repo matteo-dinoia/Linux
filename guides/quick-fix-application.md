@@ -11,7 +11,7 @@ pacman -S man-db man-pages
 pacman -S kdegraphics-thumbnailers
 ### YAKUAKE NOT OPENING FIRST TIME
 create costum shorcut
-### INSTALLING PIPEWIRE INSTEAD OF PULSE
+### INSTALLING PIPEWIRE INSTEAD OF PULSE (USEFUL IF FORGET VOLUME)
 ```sh
 pacman -S plasma-pa pipewire pipewire-pulse lib32-pipewire kpipewire wireplumber
 systemctl --user start pipewire-pulse.service
