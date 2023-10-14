@@ -13,7 +13,7 @@ pacman -S kdegraphics-thumbnailers
 create costum shorcut
 ### INSTALLING PIPEWIRE INSTEAD OF PULSE (USEFUL IF FORGET VOLUME)
 ```sh
-pacman -S plasma-pa pipewire pipewire-pulse lib32-pipewire kpipewire wireplumber
+pacman -S plasma-pa pipewire pipewire-pulse kpipewire
 systemctl --user start pipewire-pulse.service
 systemctl --user enable pipewire-pulse.service
 ```
@@ -36,7 +36,7 @@ They must be enabled in the settings
 customize -> [] title bar
 
 ### NOT CONNECTING BLUETOOTH
-sudo pacman -S pulsaudio-bluetooth
+sudo pacman -S pipewire-alsa
 
 ### Mouse and autocomp in nanot (best use old file)
 add to /etc/nanorc
