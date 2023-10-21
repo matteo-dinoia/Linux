@@ -1,0 +1,67 @@
+    1  ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+    2  nano /etc/locale.gen
+    3  locale-gen
+    4  echo LANG=en_us.UTF-8 > /etc/locale.conf
+    5  echo KEYMAP=de-latin1 > /etc/vconsole.conf
+    6  echo arch > /etc/hostname
+    7  mkinitcpio -P
+    8  passwd
+    9  useradd -m matteo
+   10  passwd matteo
+   11  usermod -aG wheel,video,audio,optical,storage matteo
+   12  systemctl enable networkmanager
+   13  systemctl enable NetworkManager
+   14  ls /boot
+   15  bootctl --path=/boot update 
+   16  exit
+   17  nano /boot/loader/entries/arch.conf 
+   18  clear
+   19  bootctl --path=/boot update 
+   20  clear
+   21  exit
+   22  clear
+   23  nano /boot/loader/entries/arch.conf 
+   24  bootctl --path=/boot install
+   25  nano /boot/loader/entries/arch.conf 
+   26  bootctl --path=/boot update
+   27  exit
+   28  bootctl -esp-path=/efi --boot-path=/boot install
+   29  bootctl --esp-path=/efi --boot-path=/boot install
+   30  bootctl install
+   31  nano /boot/loader/entries/arch.conf 
+   32  bootctl update
+   33  exit
+   34  nano /boot/loader/entries/arch.conf 
+   35  blkid /dev/nvme0n1p6
+   36  blkid /dev/nvme0n1p6 >> /boot/loader/entries/arch.conf 
+   37  nano /boot/loader/entries/arch.conf 
+   38  exit
+   39  nano /etc/vconsole
+   40  echo KEYMAP=de-latin1 > /etc/vconsole.conf
+   41  nano /etc/vconsole.conf
+   42  echo LANG=en_us.UTF-8 > /etc/locale.conf
+   43  nano /etc/locale.conf
+   44  reboot
+   45  exit
+   46  nano /etc/vconsole.conf
+   47  clear
+   48  EDITOR=nano visudo
+   49  EDITOR=nano visudo
+   50  usermod -aG wheel,video,audio,optical,storage matteo
+   51  clear
+   52  exit
+   53  echo 0 > /sys/devices/system/cpu/cpufreq/boost
+   54  ls /sys/devices/system/cpu/cpufreq/
+   55  exit
+   56  mkfs.fat -F 32 /dev/sda2
+   57  mkfs.ext4 /dev/sda4
+   58  mkswap /dev/sda3
+   59  swapon /dev/sda3
+   60  mount /dev/sda4 /mnt
+   61  mount --mkdir /dev/sda2 /mnt/boot
+   62  pacstrap -K /mnt base linux linux-firmware
+   63  pacstrap -K /mnt base linux linux-firmware
+   64  genfstab -U /mnt >> /mnt/etc/fstab
+   65  sudo nano /mnt/etc/fstab 
+   66  arch-chroot /mnt
+
