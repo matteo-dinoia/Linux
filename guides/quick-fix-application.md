@@ -14,8 +14,7 @@ create costum shorcut
 ### INSTALLING PIPEWIRE INSTEAD OF PULSE (USEFUL IF FORGET VOLUME)
 ```sh
 pacman -S plasma-pa pipewire pipewire-pulse kpipewire
-systemctl --user start pipewire-pulse.service
-systemctl --user enable pipewire-pulse.service
+systemctl --user enable --now pipewire-pulse.service
 ```
 ### INSTALLING OSU LAZER (ONLY WORK TABLET ON WAYLAND WITHOUT OPEN TABLET DRIVER)
 * Install osu (via a AUR manager for example)
