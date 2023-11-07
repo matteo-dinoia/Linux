@@ -98,15 +98,25 @@ change dns (in ipv4 del wifi)
 a     8.8.8.8, 8.8.4.4
 
 ## Installation
+### MISSING /vmlinuz-linux,...
+sudo pacman -S linux --overwrite="*"
+
 ### SETTING UP SYSTEMD-BOOT
 https://www.addictivetips.com/ubuntu-linux-tips/set-up-systemd-boot-on-arch-linux/
+``` blkid /dev/<device> ``` and copy the uuid
+
 file /boot/loader/entries/arch.conf
+```
     title Arch Linux
     linux   /vmlinuz-linux
-    initrd /initramfs-linux.img
-    options "root=PARTUUID=52c6c8e8-99a9-fa47-8e66-869dfb3b8954 quiet loglevel=3 systemd.show_status=0 rw"
+    initrd /vmlinuz-linux
+    options root=UUID=<insert_uuid> quiet loglevel=3 systemd.show_status=0 rw
+```
+
 file /boot/loader/loader.conf
+```
     default arch
-    timeout menu-hidden
-    console-mode auto
+    timeout 4
+    console-mode max
     editor no
+```
