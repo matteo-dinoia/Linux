@@ -109,7 +109,7 @@ file /boot/loader/entries/arch.conf
 ```
     title Arch Linux
     linux   /vmlinuz-linux
-    initrd /vmlinuz-linux
+    initrd  /initramfs-linux.img
     options root=UUID=<insert_uuid> quiet loglevel=3 systemd.show_status=0 rw
 ```
 
