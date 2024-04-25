@@ -58,18 +58,18 @@ blkid <LINUX-PART>
 
 file /boot/loader/entries/arch.conf
 ```
-    title Arch Linux
-    linux   /vmlinuz-linux
-    initrd  /initramfs-linux.img
-    options root=UUID=<insert_uuid> quiet loglevel=3 systemd.show_status=0 rw
+title Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root=UUID=<insert_uuid> quiet loglevel=3 rw
 ```
 
 file /boot/loader/loader.conf
 ```
-    default arch
-    timeout 1
-    console-mode max
-    editor no
+default arch
+timeout 0
+console-mode max
+editor no
 ```
 
 
@@ -101,11 +101,12 @@ sudo systemctl enable --now sddm
 # After Install
 
 ## Micro fix
-paru -S man-db noto-fonts-emoji unrar kio-gdrive xwaylandvideobridge
+paru -S man-db noto-fonts-emoji unrar kio-gdrive xwaylandvideobridge kdegraphics-thumbnailers pipewire-alsa
 sudo systemctl enable --now bluetooth
 
 ## App install
 paru -S xournalpp code discord partitionmanager systemmonitor
-## install auto cpufreq TODO
-paru -S powertop htop neofetch asusctl envycontrol
-tolto rog-control-center tlp tlpui supergfxctl
+### install auto cpufreq TODO
+paru -S powertop htop neofetch asusctl supergfxctl rog-control-center nvidia github-cli reflector
+tolto rog-control-center tlp tlpui envycontrol
+### Rerun reflector TODO
