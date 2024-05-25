@@ -5,7 +5,6 @@ https://wiki.archlinux.org/title/Preload -> auto preload is probably best for mo
 
 ### RANDOM
 * uso bc al posto di calc
-* auto-cpufreq install on aur
 * no flag work better for brigness control
 * systemd-analyze blame
 * dosfstool for mkfs.fat
@@ -24,6 +23,7 @@ https://wiki.archlinux.org/title/Preload -> auto preload is probably best for mo
 * downgrade to downgrade packages
 * ntfs-3g for ntfs and exfat-utils for exfat
 * no cube -> paru -S qt6-quick3d
+* needed (?) for hardware acc. -> libva-mesa-driver
 
 ### REFLECTOR
 sudo reflector --threads 64 --save /etc/pacman.d/mirrorlist --protocol https --latest 200 --score 50 --fastest 20 --sort rate --country Italy
@@ -31,6 +31,11 @@ sudo reflector --threads 64 --save /etc/pacman.d/mirrorlist --protocol https --l
 ### KDE FILE PICKER
 add to ~/.profile
 ```export GTK_USE_PORTAL=1```
+
+### AUTO-CPUFREQ
+auto-cpufreq install on aur than
+sudo systemctl mask power-profiles-daemon.service
+systemctl enable --now auto-cpufreq
 
 ### TPM
 use sbctl (watch arch-wiki)
@@ -214,4 +219,7 @@ NO COPIA VERSIONE CORRETTA
 
 ### BETTER BATTERY
 https://www.youtube.com/watch?app=desktop&v=YE431SYO2Is
+
+### Adding cachyos
+https://wiki.cachyos.org/cachyos_repositories/how_to_add_cachyos_repo/
 

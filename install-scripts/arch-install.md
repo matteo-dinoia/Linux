@@ -1,6 +1,6 @@
 # Arch Install
 
-## Actual install preparation
+## Preparation for install
 ``` Bash
 loadkeys it
 
@@ -17,6 +17,16 @@ exit
 archinstall
 ```
 
-## Notes
+## Options
+* Mirrors -> Italy
+* Locals -> keyboard -> Italy
+* Setup disk and user
+* Profile -> Minimal
+* Audio -> pipewire
+* Network -> Network Manager
 
-## Possible programs to install
+### Programs list
+plasma-meta, firefox, dolphin, konsole, nano (+)
+
+## Post installation
+After quit and reboot:
