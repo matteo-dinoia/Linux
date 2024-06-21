@@ -13,7 +13,6 @@ https://wiki.archlinux.org/title/Preload -> auto preload is probably best for mo
 * no icon in timezone -> install noto-fonts-emoji
 * nmtui for setting wifi easier
 * pacman -Fy/-F file/-Fx $expr for getting package containg file
-* rm /var/lib/pacman/db.lck to remove pacman currently in use
 * sudo passwd -l root
 * cannot aur/git install base-devil
 * Excluding packages is achieved by prefixing a number or range of numbers with a caret (^).
