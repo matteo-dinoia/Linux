@@ -11,3 +11,6 @@ sudo chmod 700 /bin/faillock
 
 
 pdftk input.pdf cat 2-4 output out1.pdf
+
+
+paru -S man-pages

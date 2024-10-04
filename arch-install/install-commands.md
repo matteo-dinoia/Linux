@@ -66,7 +66,7 @@ options root=UUID=<insert_uuid> quiet loglevel=3 rw
 
 file /boot/loader/loader.conf
 ```
-default arch
+default arch.conf
 timeout 0
 console-mode max
 editor no

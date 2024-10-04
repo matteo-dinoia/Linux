@@ -129,7 +129,9 @@ To run program on GPU use ```nvrun program```
 
 #### Profile on AC to quiet
 sudo nano /etc/asusd/asusd.ron
-``` platform_policy_on_ac: Quiet ```
+``` change_throttle_policy_on_ac: false ```
+also edit to prevent problem to
+``` disable_nvidia_powerd_on_battery: false```
 
 ### Firefox picker
 Each setting can have the following values:
@@ -162,55 +164,69 @@ sudo nano /etc/systemd/system/powertop-config-apply.service
 ```
 [Unit]
 Description=Powertop setting
-Wants=network.target
-After=syslog.target network-online.target
 
 [Service]
 Type=oneshot
 User=root
-ExecStart=-echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs'
-ExecStart=-echo '1' > '/sys/module/snd_hda_intel/parameters/power_save'
-ExecStart=-echo '0' > '/proc/sys/kernel/nmi_watchdog'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-10/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-22/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-23/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-8/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-11/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-6/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-21/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-5/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-7/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-9/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-3/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/i2c/devices/i2c-4/device/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.1/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:02:00.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:01.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:04.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:14.3/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.3/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:08.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:03:00.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:00.2/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.6/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.4/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:00.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:35:00.2/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:14.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.7/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:02.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:04:00.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.2/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:18.5/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:00:03.0/power/control'
-ExecStart=-echo 'auto' > '/sys/bus/pci/devices/0000:35:00.0/power/control'
+ExecStart=asus fan 1
 
-ExecStart=-echo 'disabled' > '/sys/class/net/eno1/device/power/wakeup'
+ExecStart=/bin/sh -c "echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs'"
+ExecStart=/bin/sh -c "echo '1' > '/sys/module/snd_hda_intel/parameters/power_save'"
+ExecStart=/bin/sh -c "echo '0' > '/proc/sys/kernel/nmi_watchdog'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-22/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-23/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/usb/devices/3-2/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-10/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-11/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-8/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-6/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-21/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-5/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-7/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-3/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-9/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/i2c/devices/i2c-4/device/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.1/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.3/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:08.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:02:00.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:01.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:03:00.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:04.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:14.3/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.7/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:00.2/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:00.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:35:00.2/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.6/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:14.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.5/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:02.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:04:00.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.2/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:03.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:35:00.0/power/control'"
+ExecStart=/bin/sh -c "echo 'auto' > '/sys/bus/pci/devices/0000:00:18.4/power/control'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/class/net/wlp3s0/device/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/class/net/eno1/device/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb5/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb3/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb10/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb1/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/3-2/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb8/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb6/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb4/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb2/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/3-3/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb9/power/wakeup'"
+ExecStart=/bin/sh -c "echo 'enabled' > '/sys/bus/usb/devices/usb7/power/wakeup'"
 
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 sudo systemctl enable --now powertop-config-apply
 
