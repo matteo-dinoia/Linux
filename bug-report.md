@@ -1,10 +1,9 @@
 # BUG
-1. logout after login
-2. spell checker without backend (still in master)
+1. intellij does show popup in wrong place (when half maximized)
+2. 24h format for sddm not respected
+
 
 # EXTRA
-
-# REPORT AFTER 6.1
 1. preview of line in okular is messed up
 
 # Build command

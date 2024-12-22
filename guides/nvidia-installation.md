@@ -43,6 +43,7 @@ sudo pacman -Syu --needed xorg-xwayland libxcb egl-wayland
 
 **IMPORTANT NOTE**: use ibt=off in kernel parameter in grub for avoid not booting (problem with intel)
 
+
 ## Using only on application (Prime-Run)
 ```bash
 sudo pacman -S nvidia-prime
@@ -52,3 +53,15 @@ Run the game with
 ```bash
 prime-run <program-to-run>
 ```
+
+
+## ALTERNATIVE NVIDIA
+install nvidia and envycontrol
+create file /bin/nvrun:
+```
+#!/bin/sh
+__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia $@
+```
+envycontrol -s _status_ (can use integrated for battery or hybrid for nvrun)
+envycontrol -q (to know the actual status)
+To run program on GPU use ```nvrun program```

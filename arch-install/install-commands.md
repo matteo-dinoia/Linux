@@ -38,18 +38,19 @@ echo "arch" > /etc/hostname
 systemctl enable NetworkManager
 
 ## Locales
-### uncomment /etc/locale.gen (both)
+echo -e "en_US.UTF-8 UTF-8\nit_IT.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=it" > /etc/vconsole.conf
 localectl set-x11-keymap --no-convert "it"
 localectl set-keymap it
 
-## Users
-useradd -m <USERNAME>
-passwd <USERNAME>
-usermod -aG wheel,audio,video,optical,storage <USERNAME>
-EDITOR=visudo
+## Users (matteo is <username>)
+useradd -m matteo 
+passwd matteo
+usermod -aG wheel,audio,video,optical,storage matteo
+EDITOR=nano visudo
+### uncomment %wheel ALL=(ALL:ALL) ALL
 
 ## Boot manager
 mkinitcpio -P
