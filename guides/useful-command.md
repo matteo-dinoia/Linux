@@ -44,3 +44,8 @@ pdftk input.pdf cat 2-4 output out1.pdf
 ## SPLITTING PDF (2x2) -> need mupdf-tools
 * mutool poster -x 2 -y 2 input.pdf output.pdf
 * convert -quality 100 -density 300 a.pdf +repage -crop 2x2@  +repage b.pdf
+
+# Git
+## Git filter
+install `git-filter-repo` then use as:
+git filter-repo --path FOLDER_TO_REMOVE  --invert-paths
